@@ -1,0 +1,20 @@
+project:
+  type: website
+
+website:
+  title: "sampathkalyanvankayala.github.io"
+  navbar:
+    left:
+      - href: code.qmd
+        text: MID Project
+      - about.qmd
+      - code.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

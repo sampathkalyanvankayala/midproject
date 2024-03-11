@@ -1,0 +1,83 @@
+Visualizations
+
+MID PROJECT
+
+Sampath Kalyan Vankayala
+
+2024-03-11
+
+Original Visualization:
+
+![](images/originak visualization.png)
+
+Data set:
+
+![](images/data set-01.png)
+
+VISUALIZATION - 1
+
+```{r}
+library(ggplot2)
+
+
+pay_grades <- c("E-1", "E-2", "E-3", "E-4", "E-5", "E-6", "E-7", "E-8", "E-9 regular", "E-9 special capacity",
+                "W-1", "W-2", "W-3", "W-4",
+                "O-1", "O-2", "O-3", "O-4", "O-5", "O-6", "O-7", "O-8", "O-9", "O-10 regular", "O-10 special capacity")
+monthly_payments <- c(1357.56, 1357.56, 1357.56, 1357.56, 1357.56, 1357.56, 1404.49, 1482.72, 1546.40, 1669.31,
+                      1433.56, 1490.53, 1534.11, 1623.49,
+                      1433.56, 1482.72, 1584.38, 1679.35, 1848.08, 2083.85, 2249.19, 2470.44, 2642.50, 2898.37, 3110.67)
+
+
+pay_data <- data.frame(pay_grades, monthly_payments)
+
+
+ggplot(pay_data, aes(x = pay_grades, y = monthly_payments)) +
+  geom_bar(stat = "identity", fill = "black", width = 0.5) +
+  labs(x = "Pay Grade", y = "Monthly Payment ($)", title = "Monthly Payment by Pay Grade") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+```
+
+Comparison: Bar graphs make it easy to compare results across different categories. This dataset contains numerous pay grades with accompanying monthly payouts. A bar graph makes it easier to compare monthly payments across pay grades, however a pie chart may make it more difficult to precisely compare the sizes of the slices.
+
+Better Visualisation of variations: Bar graphs efficiently emphasise value variations between groups. Each bar symbolises a specific pay grade, and its length corresponds directly to the monthly payment amount. This visual representation makes it easy to see how monthly payments fluctuate between pay grades.
+
+Clarity in Representation: Bar graphs are often easier to understand and interpret than pie charts, especially when working with several categories or datasets. Each bar in the graph represents a specific pay grade, making it simple to recognise and comprehend the monthly salary associated with each grade.
+
+Ease of Data Comparison: A bar graph allows you to directly compare individual data. You may quickly determine whether pay grades have greater or lower monthly payouts without having to estimate or compare the sizes of different pie slices.
+
+Visualization  - 2
+
+```{r}
+data <- data.frame(
+  Pay_Grade = c("E-1", "E-2", "E-3", "E-4", "E-5", "E-6", "E-7", "E-8", "E-9 regular", "E-9 special capacity",
+                "W-1", "W-2", "W-3", "W-4",
+                "O-1", "O-2", "O-3", "O-4", "O-5", "O-6", "O-7", "O-8", "O-9", "O-10 regular", "O-10 special capacity"),
+  Monthly_Payment = c(1357.56, 1357.56, 1357.56, 1357.56, 1357.56, 1357.56, 1404.49, 1482.72, 1546.40, 1669.31,
+                      1433.56, 1490.53, 1534.11, 1623.49,
+                      1433.56, 1482.72, 1584.38, 1679.35, 1848.08, 2083.85, 2249.19, 2470.44, 2642.50, 2898.37, 3110.67)
+)
+
+
+library(ggplot2)
+
+ggplot(data, aes(x = Pay_Grade, y = Monthly_Payment)) +
+  geom_point() +
+  labs(x = "Pay Grade", y = "Monthly Payment ($)") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+A scatter plot is a more thorough visualisation of the link between pay grade and monthly salary. Each data point in the scatter plot represents a specific pay grade, providing for a more detailed study of the data than a pie chart, where each pay grade is represented by a single slice.
+
+Outliers are easily identified in a scatter plot. If certain pay grades have much greater or lower monthly payouts than others, they will stand out as outliers from the overall trend.
+
+Potential Patterns and Trends: Scatter plots can aid in detecting patterns or trends in data. For example, you may detect a general increase in monthly payments as pay grade progresses, or you may find clusters of data points indicating that various pay grades have comparable monthly payments.
+
+Scatter plots allow you to include other variables, such as demographics or other things that may influence your monthly payment. By include these factors in the plot, you may analyse their link to monthly payments and potentially unearth insights that a pie chart would not allow.
+
+Reference: VA dependency and indemnity compensation rates in 2021. (2021, May 27). How Much. https://howmuch.net/articles/VA-DIC-rates-for-the-spouses-and-children-of-veterans
+
+Here is the Youtube link: -
+
+{{< video https://www.youtube.com/watch?v=5WZ_F9fQajI >}}
